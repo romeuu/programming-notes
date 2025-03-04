@@ -1,6 +1,6 @@
 04-03-2025 18:59
 Status: #idea
-Tags:
+Tags: [[Leetcode]]
 
 # Leetcode
 
@@ -46,7 +46,7 @@ function isValid(s: string): boolean {
 	return stack.length === 0; }
 ```
 
-
+Runtime: **Beats 80.19%**.
 
 
 

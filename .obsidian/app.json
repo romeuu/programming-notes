@@ -3,5 +3,9 @@
   "newFileFolderPath": "Zettelkasten",
   "alwaysUpdateLinks": true,
   "showUnsupportedFiles": true,
-  "attachmentFolderPath": "Files"
+  "attachmentFolderPath": "Files",
+  "userIgnoreFilters": [
+    "Templates/",
+    "README.md"
+  ]
 }

@@ -2,10 +2,14 @@
 Status: #idea
 Tags: [[Leetcode]]
 
+
+- [[#Problemas de TypeScript:|Problemas de TypeScript:]]
+	- [[#Problemas de TypeScript:#Valid Parenthesis:|Valid Parenthesis:]]
+
 # Leetcode
 
 ## Problemas de TypeScript:
-### **Valid Parenthesis**:
+### Valid Parenthesis:
 
 Dada una cadena s que sólo contiene los caracteres '(', ')', '{', '}', '[' y ']', determine si la cadena de entrada es válida.
 
@@ -48,9 +52,26 @@ function isValid(s: string): boolean {
 
 Runtime: **Beats 80.19%**.
 
+## Contains Duplicate
 
+Dada una matriz de enteros nums, devuelve verdadero si algún valor aparece al menos dos veces en la matriz, y devuelve falso si cada elemento es distinto.
 
+```typescript
+function containsDuplicate(nums: number[]): boolean {
+    const set = new Set<number>();
+    
+    for (let i = 0; i < nums.length; i++) {
+        if (set.has(nums[i])) {
+            return true;
+        }
+        set.add(nums[i]);
+    }
+    
+    return false;
+};
+```
 
+Runtime: **Beats 84.01%**.
 
 ---
 # Backlinks

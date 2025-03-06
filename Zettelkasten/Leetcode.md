@@ -73,6 +73,57 @@ function containsDuplicate(nums: number[]): boolean {
 
 Runtime: **Beats 84.01%**.
 
+## Valid Anagram
+
+Dadas dos cadenas s y t, devuelve verdadero si t es un anagrama de s, y falso en caso contrario.
+
+```typescript
+function isAnagram(s: string, t: string): boolean {
+	// Si tienen distintos tamaños no es un anagrama
+    if (s.length !== t.length) return false;
+
+    const map: Map<string, number> = new Map();
+
+	// En el mapa añadimos la ocurrencia de s y sacamos la de t
+    for (let i = 0; i < s.length; i++) {
+        map.set(s[i], (map.get(s[i]) || 0) + 1);
+        map.set(t[i], (map.get(t[i]) || 0) - 1);
+    }
+
+	// Si el mapa no está a 0, no es un anagrama
+    for (const count of map.values()) {
+        if (count !== 0) return false;
+    }
+
+    return true;
+}
+```
+
+Runtime: **Beats 98.28%**.
+
+## Intersection of Two Arrays
+
+Dados dos arrays de enteros nums1 y nums2, devuelve un array de su intersección. Cada elemento del resultado debe ser único y puede devolver el resultado en cualquier orden.
+
+```typescript
+function intersection(nums1: number[], nums2: number[]): number[] {
+    let uniqueItems = new Set(nums1);
+    const commonOcurrences = new Set<number>();
+
+    for (let num of nums2) {
+        if (uniqueItems.has(num) && !commonOcurrences.has(num)) {
+			commonOcurrences.add(num);  
+        }
+    }
+
+    return Array.from(commonOcurrences);
+
+};
+```
+
+Runtime: 0-1 ms. **Beats 100%**.
+
+
 ---
 # Backlinks
 

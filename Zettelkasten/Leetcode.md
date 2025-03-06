@@ -127,6 +127,33 @@ function intersection(nums1: number[], nums2: number[]): number[] {
 
 Runtime: 0-1 ms. **Beats 100%**.
 
+### Reverse String
+
+Escribe una función que dé la vuelta a una string. La string que se proporciona es un array de caracteres s.
+
+Deberás hacerlo modificando el array directamente con memoria extra 0(1).
+
+```typescript
+function reverseString(s: string[]): void {
+	// Puntero izquierdo
+    let left = 0;
+    // Puntero derecho
+    let right = s.length - 1;
+
+    while (left < right) {
+	    // Variable temporal para hacer el swap
+        const temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
+        left++;
+        right--;
+    }
+};
+```
+
+Runtime: 0ms. **Beats 100%**.
+
+
 
 ---
 # Backlinks

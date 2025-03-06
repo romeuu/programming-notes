@@ -4,12 +4,16 @@ Tags: [[Leetcode]]
 
 
 - [[#Problemas de TypeScript:|Problemas de TypeScript:]]
-	- [[#Problemas de TypeScript:#Valid Parenthesis:|Valid Parenthesis:]]
+	- [[#Problemas de TypeScript:#Valid Parenthesis|Valid Parenthesis]]
+	- [[#Problemas de TypeScript:#Contains Duplicate|Contains Duplicate]]
+	- [[#Problemas de TypeScript:#Valid Anagram|Valid Anagram]]
+	- [[#Problemas de TypeScript:#Intersection of Two Arrays|Intersection of Two Arrays]]
+
 
 # Leetcode
 
 ## Problemas de TypeScript:
-### Valid Parenthesis:
+### Valid Parenthesis
 
 Dada una cadena s que sólo contiene los caracteres '(', ')', '{', '}', '[' y ']', determine si la cadena de entrada es válida.
 
@@ -52,7 +56,7 @@ function isValid(s: string): boolean {
 
 Runtime: **Beats 80.19%**.
 
-## Contains Duplicate
+### Contains Duplicate
 
 Dada una matriz de enteros nums, devuelve verdadero si algún valor aparece al menos dos veces en la matriz, y devuelve falso si cada elemento es distinto.
 
@@ -73,7 +77,7 @@ function containsDuplicate(nums: number[]): boolean {
 
 Runtime: **Beats 84.01%**.
 
-## Valid Anagram
+### Valid Anagram
 
 Dadas dos cadenas s y t, devuelve verdadero si t es un anagrama de s, y falso en caso contrario.
 
@@ -101,7 +105,7 @@ function isAnagram(s: string, t: string): boolean {
 
 Runtime: **Beats 98.28%**.
 
-## Intersection of Two Arrays
+### Intersection of Two Arrays
 
 Dados dos arrays de enteros nums1 y nums2, devuelve un array de su intersección. Cada elemento del resultado debe ser único y puede devolver el resultado en cualquier orden.
 

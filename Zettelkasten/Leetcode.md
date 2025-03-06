@@ -153,7 +153,30 @@ function reverseString(s: string[]): void {
 
 Runtime: 0ms. **Beats 100%**.
 
+### First Unique Character in a String
 
+Dada una cadena s, encuentra el primer carácter no repetido en ella y devuelve su índice. Si no existe, devuelve -1.
+
+```typescript
+function firstUniqChar(s: string): number {
+    const map: Map<string, number> = new Map<string, number>();
+
+    for (const char of s) {
+        map.set(char, (map.get(char) || 0) + 1);
+    }
+
+    for (let i = 0; i < s.length; i++) {
+        if (map.get(s[i]) == 1) {
+            return i;
+        }
+    }
+
+    return -1;
+
+};
+```
+
+Runtime: 29ms. **Beats 76.34%**.
 
 ---
 # Backlinks

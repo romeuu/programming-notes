@@ -10,6 +10,9 @@ Tags: [[Leetcode]]
 	- [[#Problemas de TypeScript:#Intersection of Two Arrays|Intersection of Two Arrays]]
 	- [[#Problemas de TypeScript:#Reverse String|Reverse String]]
 	- [[#Problemas de TypeScript:#First Unique Character in a String|First Unique Character in a String]]
+	- [[#Problemas de TypeScript:#Length of Last Word|Length of Last Word]]
+	- [[#Problemas de TypeScript:#Majority Element|Majority Element]]
+
 
 # Leetcode
 
@@ -192,7 +195,31 @@ function lengthOfLastWord(s: string): number {
 ```
 
 
+### Majority Element
 
+Dado un array nums del tamaño n, devuelve el elemento que aparece más veces.
+
+El elemento que más aparece es el elemento que aparece más de [n/2]. Puedes asumir que el elemento mayoritario existirá siempre en el array.
+
+Para este problema podemos usar el algoritmo de Boyer-Moore Majority Voting.
+
+```typescript
+function majorityElement(nums: number[]): number {
+    let candidate = nums[0];
+    let count = 0;
+
+    for (const num of nums) {
+        if (count === 0) {
+            candidate = num;
+        }
+        count += (num === candidate) ? 1 : -1;
+    }
+    
+    return candidate;
+}
+```
+
+Runtime: 3ms. **Beats 71.47%**.
 
 
 ---

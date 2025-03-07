@@ -8,7 +8,8 @@ Tags: [[Leetcode]]
 	- [[#Problemas de TypeScript:#Contains Duplicate|Contains Duplicate]]
 	- [[#Problemas de TypeScript:#Valid Anagram|Valid Anagram]]
 	- [[#Problemas de TypeScript:#Intersection of Two Arrays|Intersection of Two Arrays]]
-
+	- [[#Problemas de TypeScript:#Reverse String|Reverse String]]
+	- [[#Problemas de TypeScript:#First Unique Character in a String|First Unique Character in a String]]
 
 # Leetcode
 
@@ -177,6 +178,22 @@ function firstUniqChar(s: string): number {
 ```
 
 Runtime: 29ms. **Beats 76.34%**.
+
+### Length of Last Word
+
+Dada una string s conteniendo palabras y espacios, devuelve el tamaño de la última palabra en la string.
+
+```typescript
+function lengthOfLastWord(s: string): number {
+    const arrayString: string[] = s.trim().split(" ");
+
+    return arrayString[arrayString.length - 1].length;
+};
+```
+
+
+
+
 
 ---
 # Backlinks

@@ -221,6 +221,40 @@ function majorityElement(nums: number[]): number {
 
 Runtime: 3ms. **Beats 71.47%**.
 
+### Most Frequent Even Element
+
+Dada un array de enteros nums, devuelve el elemento par más frecuente.
+
+Si hay empate, devuelve el más pequeño. Si no hay tal elemento, devuelve -1.
+
+```typescript
+function mostFrequentEven(nums: number[]): number {
+
+    const map = new Map<number, number>();
+
+    // Contamos solo los números pares
+    for (const num of nums) {
+        if (num % 2 === 0) {
+            map.set(num, (map.get(num) || 0) + 1);
+        }
+    }
+
+    let result = -1;
+    let maxFrequency = 0;
+
+    for (const [key, value] of map.entries()) {
+        if (value > maxFrequency || (value === maxFrequency && key < result)) {
+            maxFrequency = value;
+            result = key;
+        }
+    }
+
+    return result;
+
+}
+```
+
+
 
 ---
 # Backlinks

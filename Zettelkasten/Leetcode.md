@@ -254,6 +254,7 @@ function mostFrequentEven(nums: number[]): number {
 }
 ```
 
+Runtime: 6ms. **Beats 95%**.
 
 
 ---

@@ -2,7 +2,6 @@
 Status: #idea
 Tags: [[Leetcode]]
 
-
 - [[#Problemas de TypeScript:|Problemas de TypeScript:]]
 	- [[#Problemas de TypeScript:#Valid Parenthesis|Valid Parenthesis]]
 	- [[#Problemas de TypeScript:#Contains Duplicate|Contains Duplicate]]
@@ -12,7 +11,7 @@ Tags: [[Leetcode]]
 	- [[#Problemas de TypeScript:#First Unique Character in a String|First Unique Character in a String]]
 	- [[#Problemas de TypeScript:#Length of Last Word|Length of Last Word]]
 	- [[#Problemas de TypeScript:#Majority Element|Majority Element]]
-
+	- [[#Problemas de TypeScript:#Most Frequent Even Element|Most Frequent Even Element]]
 
 # Leetcode
 

@@ -255,6 +255,30 @@ function mostFrequentEven(nums: number[]): number {
 
 Runtime: 6ms. **Beats 95%**.
 
+### Plus One
+
+Se le da un número entero grande representado como un array de dígitos, donde cada dígitos[i] es el i-ésimo dígito del número entero. Los dígitos están ordenados de mayor a menor importancia de izquierda a derecha. El entero grande no contiene ningún 0 a la izquierda.
+
+Incrementa el entero grande en uno y devuelve el array de dígitos resultante.
+
+```typescript
+function plusOne(digits: number[]): number[] {
+    const lastElement = digits[digits.length - 1];
+
+    for (let i = digits.length - 1; i >= 0; i--) {
+        if (digits[i] < 9) {
+            digits[i] = digits[i] + 1;
+            return digits;
+        } else {
+            digits[i] = 0;
+        }
+    }
+    
+    return [1, ...digits];
+};
+```
+
+Runtime: 0ms. **Beats 100%**.
 
 ---
 # Backlinks

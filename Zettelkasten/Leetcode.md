@@ -282,6 +282,36 @@ function plusOne(digits: number[]): number[] {
 
 Runtime: 0ms. **Beats 100%**.
 
+### Search Insert Position
+
+Dada un array de enteros distintos y un valor objetivo, devuelve el índice si se encuentra el objetivo. Si no, devolver el índice donde estaría si se insertara ordenado.
+
+Debe escribir un algoritmo con complejidad de ejecución O(log n).
+
+```typescript
+function searchInsert(nums: number[], target: number): number {
+    let left = 0;
+    let right = nums.length - 1;
+
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        
+        if (nums[mid] === target) {
+            return mid;
+        } else if (nums[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+  
+    return left;
+}
+```
+
+Runtime: 0ms. **Beats 100%**.
+
+
 ---
 # Backlinks
 

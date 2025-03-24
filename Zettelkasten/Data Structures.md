@@ -125,7 +125,7 @@ int main(void) {
 }
 ```
 
-
+Como vemos, la lista con nombre list tiene reservada en memoria un chunk de 3 espacios exactamente. ¿Qué sucede si queremos que crezca el array? Pues tendríamos que crear un array nuevo, al que le asignaremos 4 slots, y posteriormente, pasaremos los valores de list a tmp. Y por último, vaciaremos la memoria que tenía el array original, y reasignaremos a la variable que teníamos antes.
 
 ---
 # Backlinks

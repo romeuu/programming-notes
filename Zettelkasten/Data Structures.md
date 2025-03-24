@@ -47,6 +47,16 @@ Como vemos, la cola tiene una capacidad, que siempre va a ser la misma, ya que e
 
 Es importante distinguir entre size y capacidad, ya que el size es el número actual de personas en la cola, y la capacidad siempre va a ser el número máximo de personas en la cola, por eso mismo se define como const.
 
+En lenguajes como C, se tiene que seguir el valor del size, ya que podríamos tener 50 elementos de "basura" en memoria.
+
+## Stacks o pilas
+
+Si una cola estaba ordenada por el concepto **FIFO**, los stacks son todo lo contrario, ya que el último elemento en entrar, será el primero en salir.
+
+Cuando pienses en esta estructura de datos, piensa en cosas apilables, como un montón de ropa. Si tienes toda tu ropa en una silla, vas usando siempre la que está arriba de todo, y haces la colada otra vez, es posible que no llegues al final de la pila de ropa, ya que tendrás más colada recién lavada encima.
+
+
+
 
 
 

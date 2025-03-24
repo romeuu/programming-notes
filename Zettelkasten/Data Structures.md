@@ -85,7 +85,43 @@ class Stack<Item> {
 }
 ```
 
+## Manejo de estructuras en memoria
 
+En lenguajes como TypeScript, no se necesita hacer un manejo exclusivo de la memoria. Es decir, si tienes un array, y quieres aumentar el tamaño de este, lo puedes hacer sin problema. Pero, ¿qué pasa en lenguajes como C?
+
+Pues en lenguajes en los que se tiene que manejar la memoria, es más complicado, ya que tendríamos que copiar el array y moverlo a un slot de memoria en el que "quepa" este array, por así decirlo, ya que si no, corremos el riesgo de pisar otras variables o funciones que estén directamente después de nuestro array.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	int *list = malloc(3 * sizeof(int));
+
+	if (list == NULL) {
+		return 1;
+	}
+
+	list[0] = 1;
+	list[1] = 2;
+	list[2] = 3;
+
+	// Time passes, what if we want the array to grow?
+
+	int *tmp = malloc(4 * sizeof(int));
+	if (tmp == NULL) {
+		return 1;
+	}
+
+	for (int i = 0; i < 3; i++) {
+		tmp[i] = list[i];
+	}
+
+	tmp[3] = 4;
+
+	free(list);
+}
+```
 
 
 

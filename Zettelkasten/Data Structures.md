@@ -4,6 +4,11 @@ Tags: [[Programming Core]]
 
 # Data Structures
 
+- [[#Queues o colas|Queues o colas]]
+- [[#Stacks o pilas|Stacks o pilas]]
+- [[#Manejo de estructuras en memoria|Manejo de estructuras en memoria]]
+
+
 Las estructuras de datos, como su nombre indica, nos permiten estructurar datos de una aplicación, y así manejar su uso.
 
 Cuando pensamos en estructuras de datos, podemos caer en la tentación de pensar que son inmutables, es decir, algo que es muy complicado de romper. Sin embargo, esto no es así, ya que, en un nivel más abstracto, las estructuras de datos se definen como modelos conceptuales (como listas, pilas o colas), y su implementación concreta puede variar según el lenguaje o el caso de uso, permitiendo distintos grados de flexibilidad.

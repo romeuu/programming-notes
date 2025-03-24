@@ -120,6 +120,8 @@ int main(void) {
 	tmp[3] = 4;
 
 	free(list);
+
+	list = tmp;
 }
 ```
 

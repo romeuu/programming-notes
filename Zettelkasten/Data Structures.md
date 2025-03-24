@@ -24,9 +24,9 @@ const capacity: number = 50;
 
 class Queue<Person> {
 	private persons: Person[];
-	private capacity: number;
+	private readonly capacity: number;
 
-	constructor(item: Person): void {
+	constructor(item: Person, capacity: numer = MAX_CAPACITY): void {
 		this.persons = [];
 		this.capacity = capacity;
 	}
@@ -47,15 +47,17 @@ Como vemos, la cola tiene una capacidad, que siempre va a ser la misma, ya que e
 
 Es importante distinguir entre size y capacidad, ya que el size es el número actual de personas en la cola, y la capacidad siempre va a ser el número máximo de personas en la cola, por eso mismo se define como const.
 
-En lenguajes como C, se tiene que seguir el valor del size, ya que podríamos tener 50 elementos de "basura" en memoria.
+En lenguajes como C, se tiene que seguir el valor del size, ya que podríamos tener 50 elementos de "basura" en memoria. Pero en otros, como TypeScript, este manejo es automático.
 
 ## Stacks o pilas
 
-Si una cola estaba ordenada por el concepto **FIFO**, los stacks son todo lo contrario, ya que el último elemento en entrar, será el primero en salir.
+Si una cola estaba ordenada por el concepto **FIFO**, los stacks son todo lo contrario, ya que el último elemento en entrar, será el primero en salir, lo que se llamaría **LIFO** (**Last In, First Out**).
 
-Cuando pienses en esta estructura de datos, piensa en cosas apilables, como un montón de ropa. Si tienes toda tu ropa en una silla, vas usando siempre la que está arriba de todo, y haces la colada otra vez, es posible que no llegues al final de la pila de ropa, ya que tendrás más colada recién lavada encima.
+Cuando pienses en esta estructura de datos, piensa en cosas apilables, como un montón de ropa. Si tienes toda tu ropa en una silla, siempre usas la prenda de ropa que está encima, ya que es la última que pusiste, mientras que las demás permanecen en el fondo.
 
+O piensa en tu email, cualquier cliente de email, pone los emails más recientes arriba, siendo así una pila.
 
+En los stacks, tendremos dos funcionalidades básicas, **push** y **pop**, básicamente, añadir algo al final de la lista y borrar el primer elemento de esta.
 
 
 

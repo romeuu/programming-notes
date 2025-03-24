@@ -20,13 +20,13 @@ Esta estructura de datos tendría dos funcionalidades básicas, **enqueue**, y
 **dequeue**, que nos permitirían añadir y sacar elementos de la cola.
 
 ```typescript
-const capacity: number = 50;
+const MAX_CAPACITY: number = 50;
 
 class Queue<Person> {
 	private persons: Person[];
 	private readonly capacity: number;
 
-	constructor(item: Person, capacity: numer = MAX_CAPACITY): void {
+	constructor(item: Person, capacity: number = MAX_CAPACITY): void {
 		this.persons = [];
 		this.capacity = capacity;
 	}
@@ -59,7 +59,31 @@ O piensa en tu email, cualquier cliente de email, pone los emails más recientes
 
 En los stacks, tendremos dos funcionalidades básicas, **push** y **pop**, básicamente, añadir algo al final de la lista y borrar el primer elemento de esta.
 
+```typescript
+const MAX_CAPACITY: number = 50;
 
+class Stack<Item> {
+	private items: Item[];
+	private readonly capacity: number;
+
+	constructor(item: Item, capacity = MAX_CAPACITY) {
+		this.items = [];
+		this.capacity = capacity;
+	}
+
+	push(item: Item) {
+		if (items.length < this.capacity) {
+			this.items.push(item);
+		}
+	}
+
+	pop() {
+		if (items.length > 0) {
+			return this.items.pop();
+		}
+	}
+}
+```
 
 
 

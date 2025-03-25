@@ -242,6 +242,27 @@ class Node {
 		this.next = next;
 	}
 }
+
+class List {
+	main() {
+		list: Node = null;
+
+		for (let i = 0; i < 3; i++) {
+			let n = new Node(i);
+			n.next = list;
+			list = n;
+		}
+
+		ptr: Node = list;
+		while (ptr.next != null) {
+			console.log(ptr.number);
+			ptr = ptr.next;
+		}
+	}
+}
+
+const linkedList = new List();
+linkedList.main();
 ```
 
 A partir de aquí, tendremos que pensar en los tiempos de ejecución. Por ejemplo, el recorrido de una lista será **O(n)**, ya que tendremos que recorrer la lista de principio a fin. Pero sin embargo, con el código que hemos puesto, la inserción de un nuevo nodo es **O(1)**, ya que siempre introducimos el siguiente nodo al principio de la lista, lo que hace que no tengamos que recorrer toda la lista para añadir un nuevo nodo.

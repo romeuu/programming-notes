@@ -7,6 +7,8 @@ Tags: [[Programming Core]]
 - [[#Queues o colas|Queues o colas]]
 - [[#Stacks o pilas|Stacks o pilas]]
 - [[#Manejo de estructuras en memoria|Manejo de estructuras en memoria]]
+- [[#Linked Lists|Linked Lists]]
+
 
 
 Las estructuras de datos, como su nombre indica, nos permiten estructurar datos de una aplicación, y así manejar su uso.
@@ -173,6 +175,20 @@ int main(void) {
 ```
 
 Y ahora que sabemos esto, podemos pasar a las **Linked Lists**, que serían estructuras de datos dinámicas. A diferencia de los arrays, no necesitan un bloque de memoria contiguo, ya que cada nodo contiene un puntero que indica la dirección del siguiente nodo en la lista. Esto permite que los elementos se almacenen en diferentes partes de la memoria sin necesidad de mover la estructura completa al redimensionar.
+
+## Linked Lists
+
+El fundamento de las linked lists sería vincular elementos entre si, que no tienen porque estar en sitios contiguos de memoria, pero que sepan cual es el siguiente elemento en la lista. Es decir, si tenemos estos elementos:
+
+- Un elemento 1 con dirección de memoria 0x123.
+- Un elemento 2 con dirección de memoria 0x456.
+- Un elemento 3 con dirección de memoria 0x789.
+
+En cada uno de estos elementos se almacenará un **pointer** o **puntero**, que apuntará al siguiente elemento. Por ejemplo, el elemento 1 tendrá su dirección de memoria, pero el puntero indicará la dirección 0x456, que sería la dirección correspondiente al número 2, y así sucesivamente.
+
+
+
+
 
 
 

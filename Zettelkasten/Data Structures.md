@@ -189,10 +189,10 @@ En cada uno de estos elementos se almacenará un **pointer** o **puntero**, que 
 La estructura base para crear un nodo (elemento de la lista) en C sería la siguiente: 
 
 ```c
-typedef struct 
+typedef struct node
 {
 	int number;
-	node *next;
+	struct node *next;
 } node;
 ```
 

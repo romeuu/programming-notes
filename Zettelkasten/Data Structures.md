@@ -186,6 +186,29 @@ El fundamento de las linked lists sería vincular elementos entre si, que no tie
 
 En cada uno de estos elementos se almacenará un **pointer** o **puntero**, que apuntará al siguiente elemento. Por ejemplo, el elemento 1 tendrá su dirección de memoria, pero el puntero indicará la dirección 0x456, que sería la dirección correspondiente al número 2, y así sucesivamente hasta que el puntero sea nulo, lo que indicaría que llegamos al último elemento.
 
+La estructura base para crear un nodo (elemento de la lista) en C sería la siguiente: 
+
+```c
+typedef struct 
+{
+	int number;
+	node *next;
+} node;
+```
+
+En TypeScript sería de la siguiente manera:
+
+```typescript
+class Node {
+	number: number;
+	next: Node | null;
+
+	constructor(number: number, next: Node | null = null) {
+		this.number = number;
+		this.next = next;
+	}
+}
+```
 
 
 

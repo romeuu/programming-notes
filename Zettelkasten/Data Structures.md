@@ -267,8 +267,100 @@ linkedList.main();
 
 A partir de aquí, tendremos que pensar en los tiempos de ejecución. Por ejemplo, el recorrido de una lista será **O(n)**, ya que tendremos que recorrer la lista de principio a fin. Pero sin embargo, con el código que hemos puesto, la inserción de un nuevo nodo es **O(1)**, ya que siempre introducimos el siguiente nodo al principio de la lista, lo que hace que no tengamos que recorrer toda la lista para añadir un nuevo nodo.
 
+Si queremos que se introduzcan los elementos de nuestra lista al final, tendríamos que hacer estos cambios:
 
+```c
+#include <cs50.h>
+#include <stdio.h>
+#include <stdlib.h>
+//Definición de un node para la lista
+typedef struct node
+{
+	int number;
+	struct node *next;
+} node;
 
+int main(void) {
+	node *list = NULL;
+
+	for (int i = 0; i < 3; i++) {
+		// Asignamos el bloque de memoria al nuevo node
+		node *n = malloc(sizeof(node));
+		if (n == NULL) {
+			return 1;
+		}
+
+		n->number = get_int("Number: ");
+		n->next = NULL;
+
+		// Si la lista está vacía, ponemos el primer nodo
+		if (list == NULL) {
+			list = n;
+		} else {
+			// Si ya hay valores en la lista
+			for (node *ptr = list; ptr != NULL; ptr = ptr->next) {
+				// Si estamos al final de la lista
+				if (ptr->next == NULL) {
+					ptr->next = n;
+					break;
+				}
+			}
+		}
+	}
+
+	// Pasa el tiempo
+
+	// Usar variable ptr (pointer) para invertir la lista
+ 	for (node *ptr = list; ptr != NULL; ptr = ptr->next) {
+	 	printf("%i\n", ptr->number);
+ 	}
+	return 0;
+}
+```
+
+Y en TypeScript sería:
+
+```typescript
+class Node {
+	number: number;
+	next: Node | null;
+
+	constructor(number: number, next: Node | null = null) {
+		this.number = number;
+		this.next = next;
+	}
+}
+
+class List {
+	main() {
+		list: Node | null = null;
+
+		for (let i = 0; i < 3; i++) {
+			let n = new Node(i);
+			
+			if (list == null) {
+				list = n;
+			} else {
+				for (let ptr = list; ptr != NULL; ptr = ptr.next) {
+					if (ptr.next == NULL) {
+						ptr.next = n;
+						break;
+					}
+				}
+			}
+		}
+
+		let ptr: Node | null = list;
+		while (ptr.next != null) {
+			console.log(ptr.number);
+			ptr = ptr.next;
+		}
+	}
+}
+
+const linkedList = new List();
+linkedList.main();
+```
 
 
 ---

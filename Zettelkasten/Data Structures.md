@@ -245,7 +245,7 @@ class Node {
 
 class List {
 	main() {
-		list: Node = null;
+		list: Node | null = null;
 
 		for (let i = 0; i < 3; i++) {
 			let n = new Node(i);
@@ -253,7 +253,7 @@ class List {
 			list = n;
 		}
 
-		ptr: Node = list;
+		let ptr: Node | null = list;
 		while (ptr.next != null) {
 			console.log(ptr.number);
 			ptr = ptr.next;

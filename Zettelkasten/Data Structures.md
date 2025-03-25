@@ -184,9 +184,7 @@ El fundamento de las linked lists sería vincular elementos entre si, que no tie
 - Un elemento 2 con dirección de memoria 0x456.
 - Un elemento 3 con dirección de memoria 0x789.
 
-En cada uno de estos elementos se almacenará un **pointer** o **puntero**, que apuntará al siguiente elemento. Por ejemplo, el elemento 1 tendrá su dirección de memoria, pero el puntero indicará la dirección 0x456, que sería la dirección correspondiente al número 2, y así sucesivamente.
-
-
+En cada uno de estos elementos se almacenará un **pointer** o **puntero**, que apuntará al siguiente elemento. Por ejemplo, el elemento 1 tendrá su dirección de memoria, pero el puntero indicará la dirección 0x456, que sería la dirección correspondiente al número 2, y así sucesivamente hasta que el puntero sea nulo, lo que indicaría que llegamos al último elemento.
 
 
 

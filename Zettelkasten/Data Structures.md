@@ -186,14 +186,48 @@ El fundamento de las linked lists sería vincular elementos entre si, que no tie
 
 En cada uno de estos elementos se almacenará un **pointer** o **puntero**, que apuntará al siguiente elemento. Por ejemplo, el elemento 1 tendrá su dirección de memoria, pero el puntero indicará la dirección 0x456, que sería la dirección correspondiente al número 2, y así sucesivamente hasta que el puntero sea nulo, lo que indicaría que llegamos al último elemento.
 
-La estructura base para crear un nodo (elemento de la lista) en C sería la siguiente: 
+La estructura base para crear un nodo (elemento de la lista) en C, y crear una lista sería la siguiente: 
 
 ```c
+#include <cs50.h>
+#include <stdio.h>
+#include <stdlib.h>
+//Definición de un node para la lista
 typedef struct node
 {
 	int number;
 	struct node *next;
 } node;
+
+int main(void) {
+	node *list = NULL;
+
+	for (int i = 0; i < 3; i++) {
+		// Asignamos el bloque de memoria al nuevo node
+		node *n = malloc(sizeof(node));
+		if (n == NULL) {
+			return 1;
+		}
+
+		n->number = get_int("Number: ");
+		n->next = NULL;
+
+		n->next = list;
+		
+		list = n;
+	}
+
+	// Pasa el tiempo
+
+	// Usar variable ptr (pointer) para invertir la lista
+ 	node *ptr = list;
+
+	while (ptr != NULL) {
+		printf("%i\n", ptr->number);
+		// Hacemos que ptr sea el siguiente nodo al que está apuntando
+		ptr = ptr->next;
+	}
+}
 ```
 
 En TypeScript sería de la siguiente manera:
@@ -209,6 +243,9 @@ class Node {
 	}
 }
 ```
+
+A partir de aquí, tendremos que pensar en los tiempos de ejecución. Por ejemplo, el recorrido de una lista será **O(n)**, ya que tendremos que recorrer la lista de principio a fin. Pero sin embargo, con el código que hemos puesto, la inserción de un nuevo nodo es **O(1)**, ya que siempre introducimos el siguiente nodo al principio de la lista, lo que hace que no tengamos que recorrer toda la lista para añadir un nuevo nodo.
+
 
 
 

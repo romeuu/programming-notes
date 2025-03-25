@@ -104,6 +104,7 @@ int main(void) {
 	int *list = malloc(3 * sizeof(int));
 
 	if (list == NULL) {
+		free(list);
 		return 1;
 	}
 
@@ -127,10 +128,53 @@ int main(void) {
 	free(list);
 
 	list = tmp;
+
+	// Time passes by and we liberate the memory of the original list
+	free(list);
 }
 ```
 
 Como vemos, la lista con nombre list tiene reservada en memoria un chunk de 3 espacios exactamente. ¿Qué sucede si queremos que crezca el array? Pues tendríamos que crear un array nuevo, al que le asignaremos 4 slots, y posteriormente, pasaremos los valores de list a tmp. Y por último, vaciaremos la memoria que tenía el array original, y reasignaremos a la variable que teníamos antes.
+
+Esto sería una manera manual de hacerlo, pero C nos proporciona funciones como **realloc**, que nos permitiría aumentar el bloque de memoria en caso de que exista un espacio contiguo disponible. ¿Y qué pasaría si no existe? Pues copiaría los datos a un nuevo bloque, y liberaría el anterior.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	int *list = malloc(3 * sizeof(int));
+
+	if (list == NULL) {
+		free(list);
+		return 1;
+	}
+
+	list[0] = 1;
+	list[1] = 2;
+	list[2] = 3;
+
+	// Time passes, what if we want the array to grow?
+
+	int *tmp = realloc(list, 4 * sizeof(int));
+	if (tmp == NULL) {
+		return 1;
+	}
+
+	tmp[3] = 4;
+
+	free(list);
+
+	list = tmp;
+
+	// Time passes by and we liberate the memory of the original list
+	free(list);
+}
+```
+
+Y ahora que sabemos esto, podemos pasar a las **Linked Lists**, que serían estructuras de datos dinámicas. A diferencia de los arrays, no necesitan un bloque de memoria contiguo, ya que cada nodo contiene un puntero que indica la dirección del siguiente nodo en la lista. Esto permite que los elementos se almacenen en diferentes partes de la memoria sin necesidad de mover la estructura completa al redimensionar.
+
+
 
 ---
 # Backlinks

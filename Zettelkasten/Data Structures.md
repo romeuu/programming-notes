@@ -380,6 +380,51 @@ return 0;
 
 Con este trozo de código lo que haremos será liberar la memoria que estaba asociada a ptr, usando un puntero temporal llamado next, ya que si intentamos acceder directamente a ptr->next después de liberarlo en memoria, tendremos un error, ya que el sistema operativo puede decidir usar esa memoria justo después de que la liberemos.
 
+## Trees
+
+Los trees son estructuras de datos muy usadas en computación, que tienen una forma peculiar, como de un árbol familiar, es decir, desde un nodo inicial, a varios nodos subsecuentes hacia abajo. 
+
+### Binary Search Tree
+
+En estructuras como los arrays o las listas enlazadas, la búsqueda binaria no siempre es eficiente o posible. En una **linked list**, por ejemplo, no podemos acceder directamente a la mitad de la estructura, ya que tendríamos que recorrerla nodo por nodo.  
+
+Un **árbol binario de búsqueda (BST)** permite realizar búsquedas eficientes dividiendo la estructura en mitades en cada paso, gracias a su organización jerárquica.
+
+Imagina que tienes un array con los siguientes elementos: `[1,2,3,4,5,6]`, podríamos crear un árbol que vaya dividiendo las mitades de este array, por ejemplo, la raíz del árbol sería el valor intermedio, en este caso el 4, después tendremos el número 2 y 6, y posteriormente, los números 1 y 3, y 5 y 7, quedando un árbol de la siguiente manera:
+
+![[Pasted image 20250326192052.png]]
+
+Y que pasaría si queremos buscar el número 5 en concreto? En la linked list y en un array, tendríamos que recorrerlo todo hasta encontrarlo, pero con el árbol podríamos partir de la raíz, y aplicar el siguiente razonamiento:
+
+- Si es mayor a la raíz, nos iremos al pointer del siguiente elemento, lo que nos llevará al 6.
+- ¿5 es mayor que 6? No, entonces el 5 estará en el siguiente nivel, señalado por el pointer del número menor que 6. También se podría dar el caso de que 5 no exista y sea null.
+
+Un ejemplo en C y TypeScript de como sería la estructura de un node de un tree sería la siguiente:
+
+```c
+typedef struct node {
+	int number;
+	struct node *left;
+	struct node *right;
+} node;
+```
+
+```typescript
+class Node {
+	number: number;
+	left: Node | null;
+	right: Node | null;
+
+	constructor(number: number, left: Node | null, right: Node | null) {
+		this.number = number;
+		this.left = left;
+		this.right = right;
+	}
+}
+```
+
+En cuanto a eficiencia y a tiempo de ejecución, los binary trees nos van a dar un tiempo de ejecución **O(log n)**, que es mucho mejor que **O(n)**, ¿pero cuál es la desventaja de estos árboles? Pues que consume más memoria, al pasar de arrays a linked lists ya consumimos más memoria, y al pasar de linked lists a árboles, consumiremos más aún.
+
 
 
 ---

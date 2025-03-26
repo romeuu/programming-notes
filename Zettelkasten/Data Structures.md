@@ -447,7 +447,7 @@ bool search(node *tree, int number) {
 }
 ```
 
-
+Puede que se den casos extremos en el que los árboles no estén balanceados y se parezcan mucho a linked lists, por lo tanto, siempre hay que intentar balancear los valores que se añaden.
 
 
 ---

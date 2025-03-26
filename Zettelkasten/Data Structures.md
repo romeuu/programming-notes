@@ -287,6 +287,7 @@ int main(void) {
 		// Asignamos el bloque de memoria al nuevo node
 		node *n = malloc(sizeof(node));
 		if (n == NULL) {
+			//TODO: free any memory already malloc'd
 			return 1;
 		}
 
@@ -361,6 +362,24 @@ class List {
 const linkedList = new List();
 linkedList.main();
 ```
+
+Ahora que hemos cambiado la lista para que los elementos nuevos vayan al final, nos encontramos con que ha aumentado el tiempo de ejecución de nuestro programa, ya que pasamos de **O(1)** a **O(n)** al tener que recorrer toda la lista para insertar un nuevo nodo.
+
+Una vez estemos listos para liberar la memoria en C, tendremos que hacer lo siguiente:
+
+```c
+node *ptr = list;
+while (ptr != NULL) {
+	node *next = ptr->next;
+	free(ptr);
+	ptr = next;
+}
+
+return 0;
+```
+
+Con este trozo de código lo que haremos será liberar la memoria que estaba asociada a ptr, usando un puntero temporal llamado next, ya que si intentamos acceder directamente a ptr->next después de liberarlo en memoria, tendremos un error, ya que el sistema operativo puede decidir usar esa memoria justo después de que la liberemos.
+
 
 
 ---

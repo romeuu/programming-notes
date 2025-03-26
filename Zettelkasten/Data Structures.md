@@ -8,8 +8,8 @@ Tags: [[Programming Core]]
 - [[#Stacks o pilas|Stacks o pilas]]
 - [[#Manejo de estructuras en memoria|Manejo de estructuras en memoria]]
 - [[#Linked Lists|Linked Lists]]
-
-
+- [[#Trees|Trees]]
+	- [[#Trees#Binary Search Tree|Binary Search Tree]]
 
 Las estructuras de datos, como su nombre indica, nos permiten estructurar datos de una aplicación, y así manejar su uso.
 
@@ -424,6 +424,29 @@ class Node {
 ```
 
 En cuanto a eficiencia y a tiempo de ejecución, los binary trees nos van a dar un tiempo de ejecución **O(log n)**, que es mucho mejor que **O(n)**, ¿pero cuál es la desventaja de estos árboles? Pues que consume más memoria, al pasar de arrays a linked lists ya consumimos más memoria, y al pasar de linked lists a árboles, consumiremos más aún.
+
+Una implementación sencilla sería:
+
+```c
+/**
+* Función que busca si un número existe en un binary tree
+**/
+bool search(node *tree, int number) {
+	if (tree == NULL) {
+		return false;
+	// Si nuestro número es menor que la raíz
+	} else if (number < tree->number) {
+		return search(tree->left, number);
+	// Si nuestro número es mayor que la raíz
+	} else if (number > tree->number) {
+		return search(tree->right, number);
+	// Si nuestro número es igual que la raíz
+	} else {
+		return true;
+	}
+}
+```
+
 
 
 

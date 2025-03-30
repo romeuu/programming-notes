@@ -449,6 +449,19 @@ bool search(node *tree, int number) {
 
 Puede que se den casos extremos en el que los árboles no estén balanceados y se parezcan mucho a linked lists, por lo tanto, siempre hay que intentar balancear los valores que se añaden.
 
+## Dictionaries
+
+Los diccionarios es algo con lo que estamos familiarizados los humanos, es una manera de vincular una palabra, con un valor, o su significado. Esto es así en todos los idiomas del mundo, y como no, en programación será lo mismo también.
+
+Es una estructura de datos muy buena a parte de arrays y listas, que nos permitirá buscar el valor de una key que conozcamos.
+
+Normalmente, el key, es un string, que podrá tener asociado un valor que sea un string, o otro tipo de datos.
+
+En cuanto a términos de optimización, lo que nos estábamos encontrando a menudo es un tiempo de ejecución de **O(log n)**, que sería un tiempo bueno, comparado con otros tiempos como **O(n)**.
+
+Pero hay una manera de llegar a un tipo de estructura de datos, que nos proporcione tiempo constante (**O(1)**), lo que sería el mejor tiempo que podemos conseguir.
+
+
 
 ---
 # Backlinks

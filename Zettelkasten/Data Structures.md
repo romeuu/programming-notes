@@ -461,6 +461,9 @@ En cuanto a términos de optimización, lo que nos estábamos encontrando a menu
 
 Pero hay una manera de llegar a un tipo de estructura de datos, que nos proporcione tiempo constante (**O(1)**), lo que sería el mejor tiempo que podemos conseguir.
 
+## Hashing and Hash Tables
+
+Esto que comentábamos lo podemos conseguir con funciones hash. 
 
 
 ---

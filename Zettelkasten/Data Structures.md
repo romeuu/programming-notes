@@ -10,6 +10,9 @@ Tags: [[Programming Core]]
 - [[#Linked Lists|Linked Lists]]
 - [[#Trees|Trees]]
 	- [[#Trees#Binary Search Tree|Binary Search Tree]]
+- [[#Dictionaries|Dictionaries]]
+- [[#Hashing and Hash Tables|Hashing and Hash Tables]]
+
 
 Las estructuras de datos, como su nombre indica, nos permiten estructurar datos de una aplicación, y así manejar su uso.
 

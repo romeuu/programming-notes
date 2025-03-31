@@ -470,6 +470,35 @@ Esto que comentábamos lo podemos conseguir con funciones hash. Tenemos que pens
 
 Esto dará lugar a las hash tables, que es algo parecido a una combinación de un array con una linked list.
 
+### Hash Table
+
+Imagínate que quieres crear un diccionario con nombres y números de teléfono. Bien, para este tipo de problemas, podremos usar lo que se conoce como **bucketization**, que sería dividir el problema en **calderos** pequeños. Por ejemplo, los nombres siempre van a empezar por una letra, por lo tanto, podríamos crear 27 **buckets**, y dependiendo de la letra por la que empiece el nombre, meterlo en uno de esos calderos.
+
+Usando el ejemplo anterior, ¿cuánto tiempo llevaría acceder a un nombre en concreto? Pues **tiempo constante**, ya que podemos acceder directamente al **bucket** donde se encuentre el nombre que queremos consultar.
+
+Se puede presentar el problema de **collision**, ya que podremos encontrarnos con que dos nombres empiecen por la misma letra. Esto nos llevaría a volver al **tiempo lineal**, ya que tendríamos que buscar dentro de ese bucket donde está el nombre. En este caso, podríamos implementar una **linked list**.
+
+![[Pasted image 20250331185212.png]]
+
+¿Y que pasaría si pasa un caso raro en el que todos los nombres empiezan por la misma letra? Pues que volvemos a tiempo linear con **O(n)**.
+
+Vamos a ver como podemos conseguir el tiempo constante usando una hash table y evitando estos problemas comunes.
+
+```c
+typedef struct node {
+	char *name;
+	char *number;
+	struct node *next;
+} node;
+
+node *table[26];
+```
+
+En esta estructura que hemos hecho en C, podemos ver como cada nodo, tiene un nombre, un número, y un puntero al siguiente elemento, en este caso la siguiente persona con el nombre más cercano. También definimos la hash table como una tabla de 26 nodos.
+
+
+
+
 
 ---
 # Backlinks

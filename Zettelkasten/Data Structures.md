@@ -466,7 +466,9 @@ Pero hay una manera de llegar a un tipo de estructura de datos, que nos proporci
 
 ## Hashing and Hash Tables
 
-Esto que comentábamos lo podemos conseguir con funciones hash. 
+Esto que comentábamos lo podemos conseguir con funciones hash. Tenemos que pensar en las funciones hash, como funciones que toman lo que le pasemos como input, y estas lo transforman en un output.
+
+Esto dará lugar a las hash tables, que es algo parecido a una combinación de un array con una linked list.
 
 
 ---

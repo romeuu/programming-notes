@@ -12,7 +12,8 @@ Tags: [[Programming Core]]
 	- [[#Trees#Binary Search Tree|Binary Search Tree]]
 - [[#Dictionaries|Dictionaries]]
 - [[#Hashing and Hash Tables|Hashing and Hash Tables]]
-
+	- [[#Hashing and Hash Tables#Hash Table|Hash Table]]
+- [[#Tries (Radix/Prefix trees)|Tries (Radix/Prefix trees)]]
 
 Las estructuras de datos, como su nombre indica, nos permiten estructurar datos de una aplicación, y así manejar su uso.
 

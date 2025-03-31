@@ -496,8 +496,38 @@ node *table[26];
 
 En esta estructura que hemos hecho en C, podemos ver como cada nodo, tiene un nombre, un número, y un puntero al siguiente elemento, en este caso la siguiente persona con el nombre más cercano. También definimos la hash table como una tabla de 26 nodos.
 
+Podemos rebajar la posibilidad de **collisions** creando más cubos, por ejemplo, si en vez de mirar por la primera letra, miramos por las primeras tres letras. El problema de este approach, sería que reservaríamos más memoria, además de que tendríamos combinaciones que no aparecerían nunca, como por ejemplo, aaa, o bbb o zzz.
 
+Como vemos, no tenemos garantías de tiempo constante, ya que podemos caer en tiempo lineal con casos perversos, como que todos los nombres empiecen por las mismas letras.
 
+## Tries (Radix/Prefix trees)
+
+Podemos pensar en los tries como un árbol de arrays. 
+
+Vamos a pensar en el anterior ejemplo, imagina que tienes un array horizontal de 27 espacios.
+
+![[Pasted image 20250331194448.png]]
+
+El funcionamiento de un try es sencillo: Para cada nivel del árbol, se usarán arrays subsecuentes. Por ejemplo, imagina que queremos insertar en la letra T, pues en la letra T habrá un pointer que nos lleve a otro array, en el que se encuentren los nombres que empiecen por la letra T. Si la segunda es O, nos llevará a los arrays en los que empiece por T y le siga la O, y así sucesivamente.
+
+![[Pasted image 20250331194657.png]]
+
+Esto puede seguir sucesivamente, imagínate que queremos llegar al nombre Toadette:
+
+![[Pasted image 20250331194804.png]]
+
+Esta estructura nos da un rendimiento bueno, ya que no importa el tamaño que tenga la estructura, ni cuantos arrays existan, tendremos siempre el mismo tiempo para insertar un nuevo nombre. El tiempo de búsqueda puede variar, ya que dependiendo de lo largo que sea el nombre, puede tardar más.
+
+Es decir, esto nos da **O(1)**, tiempo constante, no lineal.
+
+```c
+typedef struct node {
+	struct node *children[26];
+	char *number;
+} node;
+```
+
+El problema que traen estas estructuras, como hemos visto anteriormente, es la memoria que hay que asignarles, ya que habrá muchos arrays y elementos, y esto requiere más espacio.
 
 
 ---

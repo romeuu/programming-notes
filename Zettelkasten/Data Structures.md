@@ -530,6 +530,72 @@ typedef struct node {
 
 El problema que traen estas estructuras, como hemos visto anteriormente, es la memoria que hay que asignarles, ya que habrá muchos arrays y elementos, y esto requiere más espacio.
 
+## Ejercicios
+
+### Stacks
+
+#### Min Stack
+
+Se nos plantea implementar una clase MinStack en tiempo constante:
+
+- MinStack() inicializa el objeto.
+- void push(int val) mete el elemento val en el stack.
+- void pop() elimina el elemento que está más arriba en el stack.
+- int top() devuelve el primer elemento del stack.
+- int getMin() devuelve el valor mínimo del stack.
+
+```typescript
+class MinStack {
+    array: number[] = [];
+    minStack: number[] = [];
+    
+    constructor() {}
+
+    push(val: number): void {
+        this.array.push(val);
+
+        if (this.minStack.length === 0 || val <= this.minStack[this.minStack.length - 1]) {
+            this.minStack.push(val);
+        }
+    }
+
+
+    pop(): void {
+        const popped = this.array.pop();
+        
+        if (popped === this.minStack[this.minStack.length - 1]) {
+            this.minStack.pop();
+        }
+    }
+
+    top(): number {
+        const length = this.array.length;
+        return this.array[length - 1];
+    }
+
+  
+
+    getMin(): number {
+        return this.minStack[this.minStack.length - 1];
+    }
+}
+
+/**
+
+ * Your MinStack object will be instantiated and called as such:
+
+ * var obj = new MinStack()
+
+ * obj.push(val)
+
+ * obj.pop()
+
+ * var param_3 = obj.top()
+
+ * var param_4 = obj.getMin()
+
+ */
+```
 
 ---
 # Backlinks

@@ -31,6 +31,52 @@ En este caso, este algoritmo sería **O(n)**, ya que recorre todos los caractere
 
 No tenemos que ver **O(n)** como algo malo, si no que podremos verlo como aceptable en casos como cuando se necesite procesar todos los elementos de un input, o recorrer una string al completo, o si el input no es gigantesco. Pero, si que podría ser problemático en el caso de que se ejecuten varios bucles anidados haciendo **O(n^2)**, o si se ejecuta muchas veces por segundo en entradas muy grandes.
 
+#### Ejemplos por tiempo de ejecución
+
+##### O(n^2)
+
+```typescript
+function sum_char_codes(n: string): number {
+	let sum = 0;
+	for (let i=0; i < n.length; i++) {
+		for (let j = 0; j < n.length; j++) {
+			sum += n.charCodeAt(j);
+		}
+	}
+
+	return sum;
+}
+```
+
+##### O(n^3)
+
+```typescript
+function sum_char_codes(n: string): number {
+	let sum = 0;
+	for (let i=0; i < n.length; i++) {
+		for (let j = 0; j < n.length; j++) {
+			for (let k = 0; k < n.length; k++) {
+				sum += n.charCode;
+			}
+		}
+	}
+
+	return sum;
+}
+```
+
+##### O(n log n)
+
+Aquí entrarían algoritmos como Quicksort.
+
+##### O(log n)
+
+Aquí entrarían estructuras como Binary Search Trees.
+
+##### O(sqrt(n))
+
+Es un tipo de tiempo bastante raro de ver, Prime dice que se lo ha encontrado una vez en un único problema.
+
 
 
 

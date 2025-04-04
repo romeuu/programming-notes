@@ -311,6 +311,38 @@ function searchInsert(nums: number[], target: number): number {
 
 Runtime: 0ms. **Beats 100%**.
 
+### Move Zeroes
+
+Se nos da un array de números, y necesitamos mover in-place los 0 al final del array sin hacer copias del array.
+
+Esto nos limita a no usar métodos nativos de JavaScript/TypeScript y usar punteros.
+
+Razonamiento: Usamos el puntero writeIndex para indicar en que posición tenemos que poner nuestros elementos. Si `nums[i]` es distinto de 0, hacemos un swap de `nums[i]` con `nums[writeIndex]` e incrementamos el puntero writeIndex.
+
+```typescript
+function moveZeroes(nums: number[]): void {
+    let writeIndex = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== 0) {
+            [nums[i], nums[writeIndex]] = [nums[writeIndex], nums[i]];
+            writeIndex++;
+        }
+    }
+};
+```
+
+Este approach es bueno siempre que quieras cambiar elementos de sitio en un array, ya que no se crean copias y es bastante eficiente.
+
+Sería lo equivalente a hacer algo así:
+
+```typescript
+let temp = nums[i];
+nums[i] = nums[writeIndex];
+nums[writeIndex] = temp;
+```
+
+
 
 ---
 # Backlinks

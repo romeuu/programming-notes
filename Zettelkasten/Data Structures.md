@@ -19,7 +19,57 @@ Las estructuras de datos, como su nombre indica, nos permiten estructurar datos 
 
 Cuando pensamos en estructuras de datos, podemos caer en la tentación de pensar que son inmutables, es decir, algo que es muy complicado de romper. Sin embargo, esto no es así, ya que, en un nivel más abstracto, las estructuras de datos se definen como modelos conceptuales (como listas, pilas o colas), y su implementación concreta puede variar según el lenguaje o el caso de uso, permitiendo distintos grados de flexibilidad.
 
-Vamos a empezar viendo estructuras como queues, pilas, etc.
+Vamos a empezar viendo estructuras como arrays, queues, pilas, etc.
+
+## Arrays
+
+¿Sabías que **const a = []** no es un array ``técnicamente``? En esta sección vamos a ver un repaso sobre los arrays, curiosidades y como podemos indagar en ellos.
+
+En si un array es un espacio contiguo de memoria, en el que almacenamos datos interpretados por el compilador. Cuando accedemos a un espacio concreto de un array, por ejemplo, **`a[0]`**, le estamos diciendo a nuestro ordenador, busca dentro del slot de memoria que tiene reservado el array, el primer elemento. 
+
+Por ejemplo, en Node, si creamos un **ArrayBuffer**, nos dará algo así:
+
+```node
+// Creamos un ArrayBuffer de 6 espacios
+> const a = new ArrayBuffer(6);
+
+> a
+ArrayBuffer { [Uint8Contents]: <00 00 00 00 00 00>, byteLength: 6}
+```
+
+Como vemos son 00, que podríamos modificar según queramos, y nos mostraría los valores en decimal (2d es 45 en decimal):
+
+```node
+> const a8 = new Uint8Array(a)
+
+> a8[0] = 45;
+
+> a
+
+ArrayBuffer { [Uint8Contents]: <2d 00 00 00 00 00>, byteLength: 6} 
+
+> a8[2] = 45
+
+
+> a
+
+ArrayBuffer { [Uint8Contents]: <2d 00 2d 00 00 00>, byteLength: 6} 
+
+> const a16 = new Uint16Array(a)
+
+> a16[2] = 0x4545
+
+17733
+
+> a
+
+ArrayBuffer { [Uint8Contents]: <2d 00 2d 00 45 45>, byteLength: 6} 
+
+```
+
+Si usásemos un **Uint16Array**, sería en hexadecimal, por ejemplo, podríamos hacer **`a18[2]=0x4545`**.
+
+
 
 ## Queues o colas
 

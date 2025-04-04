@@ -4,6 +4,16 @@ Tags: [[Programming Core]]
 
 # Algorithms
 
+- [[#Principios básicos|Principios básicos]]
+	- [[#Principios básicos#Big O Time Complexity|Big O Time Complexity]]
+		- [[#Big O Time Complexity#Ejemplos por tiempo de ejecución|Ejemplos por tiempo de ejecución]]
+			- [[#Ejemplos por tiempo de ejecución#O(n^2)|O(n^2)]]
+			- [[#Ejemplos por tiempo de ejecución#O(n^3)|O(n^3)]]
+			- [[#Ejemplos por tiempo de ejecución#O(n log n)|O(n log n)]]
+			- [[#Ejemplos por tiempo de ejecución#O(log n)|O(log n)]]
+			- [[#Ejemplos por tiempo de ejecución#O(sqrt(n))|O(sqrt(n))]]
+
+
 ## Principios básicos
 
 ### Big O Time Complexity

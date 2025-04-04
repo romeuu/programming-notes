@@ -4,6 +4,7 @@ Tags: [[Programming Core]]
 
 # Data Structures
 
+- [[#Arrays|Arrays]]
 - [[#Queues o colas|Queues o colas]]
 - [[#Stacks o pilas|Stacks o pilas]]
 - [[#Manejo de estructuras en memoria|Manejo de estructuras en memoria]]
@@ -14,6 +15,10 @@ Tags: [[Programming Core]]
 - [[#Hashing and Hash Tables|Hashing and Hash Tables]]
 	- [[#Hashing and Hash Tables#Hash Table|Hash Table]]
 - [[#Tries (Radix/Prefix trees)|Tries (Radix/Prefix trees)]]
+- [[#Ejercicios|Ejercicios]]
+	- [[#Ejercicios#Stacks|Stacks]]
+		- [[#Stacks#Min Stack|Min Stack]]
+
 
 Las estructuras de datos, como su nombre indica, nos permiten estructurar datos de una aplicación, y así manejar su uso.
 
@@ -69,7 +74,7 @@ ArrayBuffer { [Uint8Contents]: <2d 00 2d 00 45 45>, byteLength: 6}
 
 Si usásemos un **Uint16Array**, sería en hexadecimal, por ejemplo, podríamos hacer **`a18[2]=0x4545`**.
 
-
+El tiempo de ejecución de lectura, inserción y borrado es tiempo constante (**O(1)**).
 
 ## Queues o colas
 

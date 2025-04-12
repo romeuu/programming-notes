@@ -87,7 +87,15 @@ Aquí entrarían estructuras como Binary Search Trees.
 
 Es un tipo de tiempo bastante raro de ver, Prime dice que se lo ha encontrado una vez en un único problema.
 
+## Search (Linear Search)
 
+La búsqueda lineal o linear search es una de las búsquedas más comunes que podemos hacer en estructuras como arrays, ya que funciones como **indexOf** la utilizan.
+
+El funcionamiento y razonamiento es sencillo, tenemos una función a la que le pasamos un array y un valor que queremos buscar en este. Esta función se encargará de recorrer el array, índice a índice y preguntarle a este si el valor que queremos buscar se corresponde con el que ha encontrado en ese índice.
+
+### Tiempo de ejecución
+
+El peor caso posible que tenemos 
 
 
 ---

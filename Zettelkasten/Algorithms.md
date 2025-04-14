@@ -95,7 +95,8 @@ El funcionamiento y razonamiento es sencillo, tenemos una función a la que le p
 
 ### Tiempo de ejecución
 
-El peor caso posible que tenemos 
+El peor caso posible que tenemos sería que el valor que buscamos no se encuentre en el array, lo que nos daría **O(n)**.
+
 
 
 ---

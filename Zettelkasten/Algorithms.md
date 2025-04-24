@@ -152,7 +152,7 @@ Esto nos permitirá tener en v el valor del elemento del medio del array y actua
 > En lenguajes como Java, C o C++, si `low + high` supera el límite del tipo de dato (por ejemplo, `int`), puede causar un **overflow** y devolver un valor incorrecto.
 >  Con `low + (high - low) / 2`, primero restamos (número pequeño), luego dividimos, y por último sumamos, evitando ese problema.
 
-#### Implementación final
+#### TypeScript
 
 ```typescript
 export default function bs_list(haystack: number[], needle: number): boolean {

@@ -114,6 +114,41 @@ Imagina que el array tiene 4096 elementos, cada paso de búsqueda cortaría el a
 > [!TIP] Truco de Big O
 > Normalmente, cuando el campo de búsqueda se reduce en mitades, resultará en **O(log n) / O(NlogN)**
 
+### Implementación
+
+Prime en este caso usa rangos semiabiertos, es decir, `[low, high)`, en vez de usar `[low, high]`, esto nos ayuda a no tener que estar preguntando todo el rato si `low <= high` y simplemente preguntar si `low < hi`.
+
+Esto hace que se prevengan errores out of bound y que el algoritmo sea más limpio.
+
+#### Pseudocódigo
+
+Sabemos que tendremos una función que nos pasará un array, el valor mínimo por el que tenemos que buscar, el valor máximo, y un valor esperado que llamaremos n (needle).
+
+Lo primero que tendremos que hacer será establecer el punto medio de búsqueda para hacer el primer barrido:
+
+```text
+do {
+m = (low + (high - low) / 2)
+v = arr[m]
+
+if (v == n)
+	return true
+elseif v > n
+	low = m + 1
+else
+	high = m
+
+} while (lo < hi)
+
+return false
+```
+
+Esto nos permitirá tener en v el valor del elemento del medio del array y actuar en función de si es mayor o menor al valor que buscamos.
+
+> [!DANGER] ¿Por qué usar (low + (high - low) / 2) en vez de (low + high) / 2?
+> En lenguajes como Java, C o C++, si `low + high` supera el límite del tipo de dato (por ejemplo, `int`), puede causar un **overflow** y devolver un valor incorrecto.
+>  Con `low + (high - low) / 2`, primero restamos (número pequeño), luego dividimos, y por último sumamos, evitando ese problema.
+
 
 
 

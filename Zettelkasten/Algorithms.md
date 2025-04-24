@@ -17,8 +17,7 @@ Tags: [[Programming Core]]
 - [[#Binary Search|Binary Search]]
 	- [[#Binary Search#Implementación|Implementación]]
 		- [[#Implementación#Pseudocódigo|Pseudocódigo]]
-		- [[#Implementación#Implementación final|Implementación final]]
-
+		- [[#Implementación#TypeScript|TypeScript]]
 
 ## Principios básicos
 

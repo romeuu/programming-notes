@@ -111,6 +111,9 @@ En la búsqueda binaria o binary search, el peor de los casos nos dará un **O(l
 Imagina que el array tiene 4096 elementos, cada paso de búsqueda cortaría el array a la mitad, siendo así 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1. Es decir, hay una serie de pasos hasta llegar a 1, en este caso 12, ya que el logaritmo en base 2 de 4096 es 12 (**log2 4096 = 12**).
 
 
+> [!TIP] Truco de Big O
+> Normalmente, cuando el campo de búsqueda se reduce en mitades, resultará en **O(log n) / O(NlogN)**
+
 
 
 

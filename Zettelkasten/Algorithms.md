@@ -12,6 +12,9 @@ Tags: [[Programming Core]]
 			- [[#Ejemplos por tiempo de ejecución#O(n log n)|O(n log n)]]
 			- [[#Ejemplos por tiempo de ejecución#O(log n)|O(log n)]]
 			- [[#Ejemplos por tiempo de ejecución#O(sqrt(n))|O(sqrt(n))]]
+- [[#Search (Linear Search)|Search (Linear Search)]]
+	- [[#Search (Linear Search)#Tiempo de ejecución|Tiempo de ejecución]]
+- [[#Binary Search|Binary Search]]
 
 
 ## Principios básicos
@@ -96,6 +99,18 @@ El funcionamiento y razonamiento es sencillo, tenemos una función a la que le p
 ### Tiempo de ejecución
 
 El peor caso posible que tenemos sería que el valor que buscamos no se encuentre en el array, lo que nos daría **O(n)**.
+
+## Binary Search
+
+Como habíamos visto anteriormente, en la búsqueda lineal, recorríamos todo el array para buscar el valor que necesitamos, lo que nos llevaba a un tiempo de ejecución **O(n)** en el peor de los casos.
+
+En la búsqueda binaria o binary search, el peor de los casos nos dará un **O(log n)**, lo cual es una mejora en rendimiento.
+
+¿Y por qué? Pues imagínate un array ordenado que tiene N tamaño. En la búsqueda lineal iríamos desde la posición inicial (x0), hasta la final. En la binaria no, ya que accederemos desde el valor medio del array, es decir, iremos a la posición N/2, lo que nos dirá si el elemento estará más a la izquierda o a la derecha, lo que nos permite dividir nuestro campo de búsqueda a la mitad.
+
+Imagina que el array tiene 4096 elementos, cada paso de búsqueda cortaría el array a la mitad, siendo así 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1. Es decir, hay una serie de pasos hasta llegar a 1, en este caso 12, ya que el logaritmo en base 2 de 4096 es 12 (**log2 4096 = 12**).
+
+
 
 
 

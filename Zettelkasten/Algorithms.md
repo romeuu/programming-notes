@@ -15,6 +15,9 @@ Tags: [[Programming Core]]
 - [[#Search (Linear Search)|Search (Linear Search)]]
 	- [[#Search (Linear Search)#Tiempo de ejecución|Tiempo de ejecución]]
 - [[#Binary Search|Binary Search]]
+	- [[#Binary Search#Implementación|Implementación]]
+		- [[#Implementación#Pseudocódigo|Pseudocódigo]]
+		- [[#Implementación#Implementación final|Implementación final]]
 
 
 ## Principios básicos
@@ -149,7 +152,30 @@ Esto nos permitirá tener en v el valor del elemento del medio del array y actua
 > En lenguajes como Java, C o C++, si `low + high` supera el límite del tipo de dato (por ejemplo, `int`), puede causar un **overflow** y devolver un valor incorrecto.
 >  Con `low + (high - low) / 2`, primero restamos (número pequeño), luego dividimos, y por último sumamos, evitando ese problema.
 
+#### Implementación final
 
+```typescript
+export default function bs_list(haystack: number[], needle: number): boolean {
+    let low = 0;
+    let high = haystack.length;
+  
+    do {
+        const mid = Math.floor(low + (high - low) / 2);
+        const value = haystack[mid];
+
+        if (value === needle) {
+            return true;
+        } else if (value < needle) {
+            // Ajustamos el low a la mitad + 1, ya que ya sabemos que la mitad no es igual al needle
+            low = mid + 1;
+        } else {
+            // Si el valor es mayor que la needle, acotamos el array a la mitad
+            high = mid;
+        }
+    } while(low < high);
+    return false;
+}
+```
 
 
 ---

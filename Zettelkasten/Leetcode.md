@@ -13,7 +13,9 @@ Tags: [[Leetcode]]
 	- [[#Problemas de TypeScript:#Majority Element|Majority Element]]
 	- [[#Problemas de TypeScript:#Most Frequent Even Element|Most Frequent Even Element]]
 	- [[#Problemas de TypeScript:#Plus One|Plus One]]
-
+	- [[#Problemas de TypeScript:#Search Insert Position|Search Insert Position]]
+	- [[#Problemas de TypeScript:#Move Zeroes|Move Zeroes]]
+	- [[#Problemas de TypeScript:#Binary Search|Binary Search]]
 
 # Leetcode
 
@@ -342,6 +344,33 @@ nums[i] = nums[writeIndex];
 nums[writeIndex] = temp;
 ```
 
+
+### Binary Search
+
+Se nos pide que se implemente Binary Search, y que si se encuentra el elemento se devuelva el índice, si no que se devuelva -1.
+
+```typescript
+export default function bs_list(haystack: number[], needle: number): boolean {
+    let low = 0;
+    let high = haystack.length;
+  
+    do {
+        const mid = Math.floor(low + (high - low) / 2);
+        const value = haystack[mid];
+
+        if (value === needle) {
+            return true;
+        } else if (value < needle) {
+            // Ajustamos el low a la mitad + 1, ya que ya sabemos que la mitad no es igual al needle
+            low = mid + 1;
+        } else {
+            // Si el valor es mayor que la needle, acotamos el array a la mitad
+            high = mid;
+        }
+    } while(low < high);
+    return false;
+}
+```
 
 
 ---

@@ -137,8 +137,8 @@ export function TwitterFollowCard (userName, name, isFollowing) {
 export function App() {
 	return (
 		<section className="App">
-			<TwitterFollowCard username="midudev" name="Miguel Ángel"/>
-			<TwitterFollowCard username="pheralb" name="Pablo Hernández"/>
+			<TwitterFollowCard isFollowing username="midudev" name="Miguel Ángel"/>
+			<TwitterFollowCard isFollowing={false} username="pheralb" name="Pablo Hernández"/>
 		</section>	
 	)
 }

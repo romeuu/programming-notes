@@ -136,10 +136,10 @@ export function TwitterFollowCard (userName, name, isFollowing) {
 // App.jsx
 export function App() {
 	return (
-		<>
+		<section className="App">
 			<TwitterFollowCard username="midudev" name="Miguel Ángel"/>
 			<TwitterFollowCard username="pheralb" name="Pablo Hernández"/>
-		<>	
+		</section>	
 	)
 }
 ```

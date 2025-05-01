@@ -4,6 +4,8 @@ Tags: [[React]], [[Frontend]]
 
 # React
 
+Estos apuntes sobre React comienzan sobre el curso de Midudev, y serán organizados a modo de esquema o mapa mental para profundizar en esta librería.
+
 
 
 

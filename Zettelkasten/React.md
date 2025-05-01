@@ -133,6 +133,18 @@ export function TwitterFollowCard (userName, name, isFollowing) {
 ```
 
 ```jsx
+// App.jsx
+export function App() {
+	return (
+		<>
+			<TwitterFollowCard username="midudev" name="Miguel Ángel"/>
+			<TwitterFollowCard username="pheralb" name="Pablo Hernández"/>
+		<>	
+	)
+}
+```
+
+```jsx
 // main.jsx
 import App from 'App.jsx';
 

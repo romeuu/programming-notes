@@ -111,18 +111,20 @@ root.render(
 
 #### Componente de "A quién seguir" Twitter
 
-Para crear este componente tendremos que crear un componente a parte, por ejemplo, en el fichero **App.jsx**. Además, tendremos que exportarlo para que podamos importarlo en otros lugares de la app:
+Para crear este componente tendremos que crear un componente a parte, por ejemplo, en el fichero **TwitterFollowCard.jsx**. Además, tendremos que exportarlo para que podamos importarlo en otros lugares de la app:
 
 ```jsx
-// App.jsx
-export function App () {
+// TwitterFollowCard.jsx
+export function TwitterFollowCard (userName, name, isFollowing) {
+	const imageSrc = `https://unavatar.io/{userName}`;
+	
 	return (
 		<article className='md-twitter-follow-card'>
 			<header>
-				<img alt="El avatar de midudev" src="https://unavatar.io/midudev" />
+				<img alt="El avatar de midudev" src="{imageSrc}" />
 				<div>
-					<strong>Miguel Ángel Durán</strong>
-					<span>@midudev</span>
+					<strong>{userName}</strong>
+					<span>{username}</span>
 				</div>
 			</header>
 		</article>

@@ -2,6 +2,10 @@
 Status: #project
 Tags: [[React]], [[Frontend]]
 
+- [[#Introducción|Introducción]]
+	- [[#Introducción#Ejemplos|Ejemplos]]
+		- [[#Ejemplos#Componente de "A quién seguir" Twitter|Componente de "A quién seguir" Twitter]]
+
 # React
 
 Estos apuntes sobre React comienzan sobre el curso de Midudev, y serán organizados a modo de esquema o mapa mental para profundizar en esta librería.
@@ -85,7 +89,7 @@ root.render(
 )
 ```
 
-Si queremos adentrarnos más en esto, existe el concepto del componente, al igual que en Angular. 
+Si queremos adentrarnos más en esto, existe el concepto del componente, al igual que en Angular. Y los nombres tienen que ser Pascal Case al igual que en Angular (MiComponente), o (ButtonHome).
 
 ```jsx
 const Button = ({text}) => {
@@ -103,7 +107,40 @@ root.render(
 )
 ```
 
+### Ejemplos
 
+#### Componente de "A quién seguir" Twitter
+
+Para crear este componente tendremos que crear un componente a parte, por ejemplo, en el fichero **App.jsx**. Además, tendremos que exportarlo para que podamos importarlo en otros lugares de la app:
+
+```jsx
+// App.jsx
+export function App () {
+	return (
+		<article className='md-twitter-follow-card'>
+			<header>
+				<img alt="El avatar de midudev" src="https://unavatar.io/midudev" />
+				<div>
+					<strong>Miguel Ángel Durán</strong>
+					<span>@midudev</span>
+				</div>
+			</header>
+		</article>
+	)
+}
+```
+
+```jsx
+// main.jsx
+import App from 'App.jsx';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+	<App/>
+)
+```
+
+Si queremos añadir clases a un elemento, hay que usar className en vez de class, ya que es una palabra reservada en JavaScript.
 
 ---
 # Backlinks

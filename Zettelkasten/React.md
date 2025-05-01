@@ -70,22 +70,38 @@ En este caso vemos como se renderizaría un fragmento en el que existirían dos 
 Entonces, podremos crear los botones en formato de función para no repetirlo, por ejemplo:
 
 ```jsx
-const createButton = () => {
+const createButton = ({text}) => {
 	return {
-		<button>Hola Button</button>
+		<button>{text}</button>
 	} 
 }
 
 root.render(
 	<React.Fragment>
-		{createButton()}
-		{createButton()}
-		{createButton()}
+		{createButton({text: 'Button 1'})}
+		{createButton({text: 'Button 2'})}
+		{createButton({text: 'Button 3'})}
 	</React.Fragment>
 )
 ```
 
+Si queremos adentrarnos más en esto, existe el concepto del componente, al igual que en Angular. 
 
+```jsx
+const Button = ({text}) => {
+	return {
+		<button>{text}</button>
+	} 
+}
+
+root.render(
+	<React.Fragment>
+		<Button text="Button 1"/>
+		<Button text="Button 2"/>
+		<Button text="Button 3"/>
+	</React.Fragment>
+)
+```
 
 
 

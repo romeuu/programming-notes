@@ -1,6 +1,6 @@
 18-02-2025 19:20
 Status: #idea
-Tags: [[Angular]]
+Tags: [[Angular]], [[Frontend]]
 
 - [[#Nivel básico|Nivel básico]]
 	- [[#Nivel básico#Observables|Observables]]

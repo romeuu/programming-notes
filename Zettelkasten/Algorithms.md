@@ -12,13 +12,18 @@ Tags: [[Programming Core]]
 			- [[#Ejemplos por tiempo de ejecución#O(n log n)|O(n log n)]]
 			- [[#Ejemplos por tiempo de ejecución#O(log n)|O(log n)]]
 			- [[#Ejemplos por tiempo de ejecución#O(sqrt(n))|O(sqrt(n))]]
-- [[#Search (Linear Search)|Search (Linear Search)]]
-	- [[#Search (Linear Search)#Tiempo de ejecución|Tiempo de ejecución]]
-- [[#Binary Search|Binary Search]]
-	- [[#Binary Search#Implementación|Implementación]]
-		- [[#Implementación#Pseudocódigo|Pseudocódigo]]
-		- [[#Implementación#TypeScript|TypeScript]]
-	- [[#Binary Search#Two Crystal Ball Problem|Two Crystal Ball Problem]]
+- [[#Search|Search]]
+	- [[#Search#Linear Search|Linear Search]]
+		- [[#Linear Search#Tiempo de ejecución|Tiempo de ejecución]]
+	- [[#Search#Binary Search|Binary Search]]
+		- [[#Binary Search#Implementación|Implementación]]
+			- [[#Implementación#Pseudocódigo|Pseudocódigo]]
+			- [[#Implementación#TypeScript|TypeScript]]
+		- [[#Binary Search#Two Crystal Ball Problem|Two Crystal Ball Problem]]
+			- [[#Two Crystal Ball Problem#Implementación|Implementación]]
+
+
+
 
 
 ## Principios básicos
@@ -94,17 +99,19 @@ Aquí entrarían estructuras como Binary Search Trees.
 
 Es un tipo de tiempo bastante raro de ver, Prime dice que se lo ha encontrado una vez en un único problema.
 
-## Search (Linear Search)
+## Search
+
+### Linear Search
 
 La búsqueda lineal o linear search es una de las búsquedas más comunes que podemos hacer en estructuras como arrays, ya que funciones como **indexOf** la utilizan.
 
 El funcionamiento y razonamiento es sencillo, tenemos una función a la que le pasamos un array y un valor que queremos buscar en este. Esta función se encargará de recorrer el array, índice a índice y preguntarle a este si el valor que queremos buscar se corresponde con el que ha encontrado en ese índice.
 
-### Tiempo de ejecución
+#### Tiempo de ejecución
 
 El peor caso posible que tenemos sería que el valor que buscamos no se encuentre en el array, lo que nos daría **O(n)**.
 
-## Binary Search
+### Binary Search
 
 Como habíamos visto anteriormente, en la búsqueda lineal, recorríamos todo el array para buscar el valor que necesitamos, lo que nos llevaba a un tiempo de ejecución **O(n)** en el peor de los casos.
 
@@ -118,13 +125,13 @@ Imagina que el array tiene 4096 elementos, cada paso de búsqueda cortaría el a
 > [!TIP] Truco de Big O
 > Normalmente, cuando el campo de búsqueda se reduce en mitades, resultará en **O(log n) / O(NlogN)**
 
-### Implementación
+#### Implementación
 
 Prime en este caso usa rangos semiabiertos, es decir, `[low, high)`, en vez de usar `[low, high]`, esto nos ayuda a no tener que estar preguntando todo el rato si `low <= high` y simplemente preguntar si `low < hi`.
 
 Esto hace que se prevengan errores out of bound y que el algoritmo sea más limpio.
 
-#### Pseudocódigo
+##### Pseudocódigo
 
 Sabemos que tendremos una función que nos pasará un array, el valor mínimo por el que tenemos que buscar, el valor máximo, y un valor esperado que llamaremos n (needle).
 
@@ -153,7 +160,7 @@ Esto nos permitirá tener en v el valor del elemento del medio del array y actua
 > En lenguajes como Java, C o C++, si `low + high` supera el límite del tipo de dato (por ejemplo, `int`), puede causar un **overflow** y devolver un valor incorrecto.
 >  Con `low + (high - low) / 2`, primero restamos (número pequeño), luego dividimos, y por último sumamos, evitando ese problema.
 
-#### TypeScript
+##### TypeScript
 
 ```typescript
 export default function bs_list(haystack: number[], needle: number): boolean {
@@ -178,7 +185,7 @@ export default function bs_list(haystack: number[], needle: number): boolean {
 }
 ```
 
-### Two Crystal Ball Problem
+#### Two Crystal Ball Problem
 
 Tenemos el siguiente problema:
 
@@ -193,7 +200,7 @@ El enfoque correcto sería hacer la raíz cuadrada del número de pisos que hay,
 
 ![[two-crystal-balls.png]]
 
-#### Implementación
+##### Implementación
 
 ```typescript
 export default function two_crystal_balls(breaks: boolean[]): number {
@@ -225,6 +232,22 @@ export default function two_crystal_balls(breaks: boolean[]): number {
     return -1;
 }
 ```
+
+## Sorting
+
+### Bubble Sort
+
+El principio del bubble sort es sencillo, se compara el número i con el elemento i+1, y si es mayor, se cambian de posición.
+
+Con la primera iteración, siempre va a quedar el elemento más grande al final del array. Esto nos permite optimizar un poco más el algoritmo, ya que en la siguiente iteración, no tendríamos que mirar el último elemento, ya que sabemos que está ordenado. Esto se repetirá hasta que tengamos el array completado, ya que en la segunda iteración, el segundo elemento más grande, ya estará ordenado también.
+
+![[Pasted image 20250520183600.png]]
+*Imagen en la que se muestran las iteraciones del algoritmo*
+
+![[Pasted image 20250520183649.png]]
+*Explicación del runtime O(n^2 de este problema, ya que deriva de Gauss.*
+
+
 
 
 

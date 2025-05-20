@@ -247,6 +247,24 @@ Con la primera iteración, siempre va a quedar el elemento más grande al final 
 ![[Pasted image 20250520183649.png]]
 *Explicación del runtime O(n^2 de este problema, ya que deriva de Gauss.*
 
+#### Implementación
+
+```typescript
+export default function bubble_sort(arr: number[]): void {
+	// Bucle for inicial
+	for (let i = 0; i < arr.length; i++) {
+        // Bucle for que limita el tamaño máximo del array
+        // Se hace la resta de - 1 para no salir del array
+        // Y se hace la resta de i para limitar el tamaño del array
+        for (let j = 0; j < arr.length - 1 - i; j++) {
+            if (arr[j] > arr[j+1]) {
+                [arr[j], arr[j + 1]] = [arr[j+1], arr[j]];
+            }
+        }
+    }
+}
+```
+
 
 
 

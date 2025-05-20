@@ -18,6 +18,8 @@ Tags: [[Programming Core]]
 	- [[#Binary Search#Implementación|Implementación]]
 		- [[#Implementación#Pseudocódigo|Pseudocódigo]]
 		- [[#Implementación#TypeScript|TypeScript]]
+	- [[#Binary Search#Two Crystal Ball Problem|Two Crystal Ball Problem]]
+
 
 ## Principios básicos
 
@@ -183,13 +185,16 @@ Tenemos el siguiente problema:
 > [!NOTE] Two Crystal Ball
 > Dadas dos bolas de cristal que se romperán al tocar el suelo desde una altura determinada (piso de un edificio), encuentra el sitio exacto en el que se romperán de manera optimizada.
 
-A priori, si tuviésemos una sola bola, podríamos realizar una búsqueda lineal, pero podríamos tener problemas para llegar a resolver el problema, ya que estaremos enfrentando directamente el peor caso posible, que sería que se rompan en los dos últimos pisos del edificio.
+A priori, si tuviésemos una sola bola, podríamos realizar una búsqueda lineal, pero podríamos tener problemas para llegar a resolver el problema, ya que estaremos enfrentando directamente el peor caso posible, que sería que se rompan en los dos últimos pisos del edificio, lo que sería **O(N)**.
 
-Por otra parte, podríamos empezar en la mitad y hacer una binary search, pero esto lo podríamos hacer si tenemos bolas infinitas, ya que si empezamos a descartarlas desde el medio, se nos romperán las dos y posiblemente no hayamos llegado a nuestro número objetivo.
+Por otra parte, podríamos empezar en la mitad y hacer una binary search, pero esto lo podríamos hacer si tenemos bolas infinitas, ya que si empezamos a descartarlas desde el medio, se nos romperán las dos y posiblemente no hayamos llegado a nuestro número objetivo. Y lo que pasaría sería que haríamos una búsqueda linear desde donde hemos encontrado el punto en el que se ha roto, y posiblemente sea la mitad del array, por lo tanto, tendríamos que recorrer **1/2** N, lo que si quitamos las constantes, sería **O(N)**.
 
-El enfoque correcto sería hacer la raíz cuadrada del número de pisos que hay, y posteriormente, detectar donde se rompe la primera bola. Con esto nos dará un intervalo en el que podremos buscar de manera lineal, y encontraremos nuestro número objetivo de una manera optimizada.
+El enfoque correcto sería hacer la raíz cuadrada del número de pisos que hay, y posteriormente, detectar donde se rompe la primera bola. Con esto nos dará un intervalo en el que podremos buscar de manera lineal, y encontraremos nuestro número objetivo de una manera optimizada. Esto nos dará un runtime de **O(sqrt N)**.
 
 ![[two-crystal-balls.png]]
+
+#### Implementación
+
 
 
 

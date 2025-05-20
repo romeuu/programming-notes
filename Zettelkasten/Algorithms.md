@@ -176,6 +176,23 @@ export default function bs_list(haystack: number[], needle: number): boolean {
 }
 ```
 
+### Two Crystal Ball Problem
+
+Tenemos el siguiente problema:
+
+> [!NOTE] Two Crystal Ball
+> Dadas dos bolas de cristal que se romperán al tocar el suelo desde una altura determinada (piso de un edificio), encuentra el sitio exacto en el que se romperán de manera optimizada.
+
+A priori, si tuviésemos una sola bola, podríamos realizar una búsqueda lineal, pero podríamos tener problemas para llegar a resolver el problema, ya que estaremos enfrentando directamente el peor caso posible, que sería que se rompan en los dos últimos pisos del edificio.
+
+Por otra parte, podríamos empezar en la mitad y hacer una binary search, pero esto lo podríamos hacer si tenemos bolas infinitas, ya que si empezamos a descartarlas desde el medio, se nos romperán las dos y posiblemente no hayamos llegado a nuestro número objetivo.
+
+El enfoque correcto sería hacer la raíz cuadrada del número de pisos que hay, y posteriormente, detectar donde se rompe la primera bola. Con esto nos dará un intervalo en el que podremos buscar de manera lineal, y encontraremos nuestro número objetivo de una manera optimizada.
+
+![[two-crystal-balls.png]]
+
+
+
 
 ---
 # Backlinks

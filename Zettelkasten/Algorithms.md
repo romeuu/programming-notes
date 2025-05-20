@@ -195,7 +195,36 @@ El enfoque correcto sería hacer la raíz cuadrada del número de pisos que hay,
 
 #### Implementación
 
+```typescript
+export default function two_crystal_balls(breaks: boolean[]): number {
+    // Determinamos el número de saltos que tenemos que dar
+    const jumpAmount = Math.floor(Math.sqrt(breaks.length));
 
+    let i = jumpAmount;
+
+	// Arrancamos el bucle para encontrar el primer breakpoint
+	// Y saltamos cada jumpAmount
+    for (; i < breaks.length; i += jumpAmount) {
+        if (breaks[i]) {
+            break;
+        }
+    }
+
+	// Retrocedemos al piso en el que no se rompió
+	// Por ejemplo, sabemos que si se rompe en el 50, volvemos atrás al 40
+    i -= jumpAmount;
+
+	// Búsqueda linear hasta encontrar el piso donde se rompe
+	// la segunda bola
+    for(let j = 0; j <= jumpAmount && i < breaks.length; ++j, ++i) {
+        if (breaks[i]) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+```
 
 
 

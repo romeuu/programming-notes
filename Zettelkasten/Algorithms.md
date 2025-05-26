@@ -24,6 +24,11 @@ Tags: [[Programming Core]]
 - [[#Sorting|Sorting]]
 	- [[#Sorting#Bubble Sort|Bubble Sort]]
 		- [[#Bubble Sort#Implementación|Implementación]]
+- [[#Data Structures|Data Structures]]
+	- [[#Data Structures#Linked Lists|Linked Lists]]
+		- [[#Linked Lists#Complejidad de double linked list|Complejidad de double linked list]]
+		- [[#Linked Lists#Complejidad de single linked list|Complejidad de single linked list]]
+
 
 ## Principios básicos
 

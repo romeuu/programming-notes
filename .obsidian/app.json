@@ -7,5 +7,6 @@
   "userIgnoreFilters": [
     "Templates/",
     "README.md"
-  ]
+  ],
+  "spellcheck": true
 }

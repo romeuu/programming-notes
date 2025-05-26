@@ -265,6 +265,32 @@ export default function bubble_sort(arr: number[]): void {
 ```
 
 
+## Data Structures
+
+### Linked Lists
+
+En las listas enlazadas, tendremos nodos, que contienen un valor, pero tienen un puntero que nos lleva al siguiente elemento de la lista.
+
+Esto nos permite tener constancia hacia adelante, y saber que elemento tenemos delante nuestra, pero nunca podremos saber que elementos hay detrás nuestra.
+
+Esto cambia en las double linked lists, que simplemente habrá otro puntero que nos indica el valor anterior:
+
+```typescript
+//Single linked list
+node<T> {
+	val: T
+	next?: Node<T>
+}
+
+// Double list
+node<T> {
+	val: T
+	next?: Node<T>
+	prev?: Node<T>
+}
+```
+
+
 
 
 ---

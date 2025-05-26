@@ -25,8 +25,6 @@ Tags: [[Programming Core]]
 	- [[#Sorting#Bubble Sort|Bubble Sort]]
 		- [[#Bubble Sort#Implementación|Implementación]]
 
-
-
 ## Principios básicos
 
 ### Big O Time Complexity
@@ -265,7 +263,6 @@ export default function bubble_sort(arr: number[]): void {
     }
 }
 ```
-
 
 
 

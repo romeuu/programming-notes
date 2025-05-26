@@ -300,6 +300,21 @@ En pseudo código sería algo como hacer que el elemento B apunte al elemento pr
 
 ![[Pasted image 20250526205509.png]]
 
+#### Complejidad de double linked list
+
+- Obtener el principio o el final de la lista: Son operaciones constantes **O(1)**.
+- Borrado desde el final: Operación constante **O(1)**.
+- Borrado en el medio: Requiere de dos operaciones para llegar al medio y después hacer el borrado, por lo tanto puede ser costoso. **O(n)**.
+- Prepend/Append: Tiempo constante, porque puedes acceder al inicio y al final rápido. **O(1)**.
+
+#### Complejidad de single linked list
+
+- Obtener el principio: **O(1)**.
+- Obtener el final: **O(n)**.
+- Borrado desde el final: hay que recorrer toda la lista y luego borrar. **O(n)**.
+- Borrado en el medio: Requiere de dos operaciones para llegar al medio y después hacer el borrado, por lo tanto puede ser costoso. **O(n)**.
+- Prepend: Tiempo constante, porque puedes acceder al inicio. **O(1)**.
+- Append: **O(n)**, ya que necesitas recorrer hasta el final.
 
 
 

@@ -290,6 +290,14 @@ node<T> {
 }
 ```
 
+Las operaciones de insertado serán **O(1)**, ya que no importa cuantos valores existan en la lista.
+
+Por otro lado, las operaciones de borrado requieren que recorramos la lista hasta llegar al elemento que queremos eliminar, que consistiría en cambiar el puntero al siguiente elemento, lo que nos deja con un tiempo de **O(n)**.
+
+En pseudo código sería algo como hacer que el elemento B apunte al elemento previo de C, y que el siguiente de B sea C.next, o D, dejando así al elemento C fuera de la lista. Si estamos en una double linked list, tendríamos que hacer que el elemento D.prev, apunte a B, si no no funcionaría bien.
+
+![[Pasted image 20250526205509.png]]
+
 
 
 

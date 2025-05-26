@@ -21,8 +21,9 @@ Tags: [[Programming Core]]
 			- [[#Implementación#TypeScript|TypeScript]]
 		- [[#Binary Search#Two Crystal Ball Problem|Two Crystal Ball Problem]]
 			- [[#Two Crystal Ball Problem#Implementación|Implementación]]
-
-
+- [[#Sorting|Sorting]]
+	- [[#Sorting#Bubble Sort|Bubble Sort]]
+		- [[#Bubble Sort#Implementación|Implementación]]
 
 
 

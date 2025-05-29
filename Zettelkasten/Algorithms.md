@@ -321,6 +321,27 @@ En pseudo código sería algo como hacer que el elemento B apunte al elemento pr
 - Prepend: Tiempo constante, porque puedes acceder al inicio. **O(1)**.
 - Append: **O(n)**, ya que necesitas recorrer hasta el final.
 
+### Queue
+
+Esta es una de las data structures más comunes en el mundo real. La cola o queue es una estructura FIFO, es decir, first in, first out, lo que quiere decir que el primero que llega, es el primero en salir, algo así como una cola para ir al cine.
+
+Imagínate que tenemos dos punteros: Uno para el inicio (head) y otro para el final (tail).
+
+Si queremos insertar algo en la queue, lo que tendremos que hacer es cambiar el puntero de tail a el elemento que insertemos para así indicar que la cola es el último elemento.
+
+```
+this.tail.next = E
+this.tail = E
+```
+
+Como vemos, el último elemento, tiene el puntero next a si mismo, es decir, no hay otro elemento.
+
+Si queremos sacar un elemento, tendríamos que apuntar head al siguiente elemento, por ejemplo, si tenemos los elementos A,B,C,D, y sacamos a A, el puntero del head tendría que apuntar a B.
+
+![[Pasted image 20250529185717.png]]
+
+
+
 
 
 ---

@@ -338,10 +338,12 @@ Como vemos, el último elemento, tiene el puntero next a si mismo, es decir, no 
 
 Si queremos sacar un elemento, tendríamos que apuntar head al siguiente elemento, por ejemplo, si tenemos los elementos A,B,C,D, y sacamos a A, el puntero del head tendría que apuntar a B.
 
+
 ![[Pasted image 20250529185717.png]]
 
+El rendimiento como podemos observar es constante, es decir, tanto en inserción como en eliminación, sería **O(1)**, ya que ambas operaciones son iguales, solo que en diferentes extremos de la queue.
 
-
+Podemos observar que una queue, al final sigue siendo una lista linkada, pero con restricciones para un uso específico.
 
 
 ---
